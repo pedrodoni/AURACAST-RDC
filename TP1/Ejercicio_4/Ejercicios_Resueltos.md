@@ -1,7 +1,7 @@
 # Red Simple en Packet Tracer
 
 ## Inciso a, b, c
-El router opera a una frecuencia a una frecuencia de 2.4GHz. Corresponde a la region de Microondas (Transmision via Satélite y Terrestre). Opera entre la banda UHF (Ultrahigh Frequency, 300MHz - 3GHz). Tal y como se detalla en la siguiente imagen.
+Luego de hacer el inciso a y b que fue la creacion y configuracion del router, podemos decir que este opera a una frecuencia a una frecuencia de 2.4GHz. Corresponde a la region de Microondas (Transmision via Satélite y Terrestre). Opera entre la banda UHF (Ultrahigh Frequency, 300MHz - 3GHz). Tal y como se detalla en la siguiente imagen.
 
 ![](Imagenes/image.png)
 
