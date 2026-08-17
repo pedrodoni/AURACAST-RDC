@@ -1,0 +1,19 @@
+# Transmisión de señales
+No es conveniente transmitir una señal escalonada de manera inalámbrica debido a factores físicos y del canal de transmisión.
+
+Por el teorema de Fourier, una señal con transiciones abruptas requiere una cantidad infinita de frecuencias altas para mantener sus esquinas rectas. El canal inalámbrico tiene un ancho de banda limitado, lo que actúa como un filtro que recorta estas frecuencias. Como resultado, la señal se deforma y sus flancos se redondean, provocando que los pulsos se solapen (Interferencia Entre Símbolos).
+
+Además, para que una antena irradie energía de manera eficiente, su tamaño físico debe ser proporcional a la longitud de onda de la señal. Como las señales escalonadas puras tienen componentes de muy baja frecuencia (es decir, longitudes de onda inmensas), intentar transmitirlas directamente requeriría construir antenas de kilómetros de longitud.
+
+Transmitir en frecuencias bajas por el espacio libre genera una enorme atenuación y hace que la señal sea extremadamente vulnerable al ruido electromagnético del ambiente. El receptor sería incapaz de distinguir de forma confiable los niveles lógicos que representan los bits.
+
+Por estos motivos, la información digital no se envía por el aire "cruda", sino que se recurre a la modulación, donde se alteran los parámetros (amplitud, frecuencia o fase) de una onda electromagnética (portadora) para que transporte los datos a través de antenas de tamaño práctico y en bandas de frecuencia reguladas.
+
+## Inciso a
+
+## Inciso b
+
+## Inciso c
+
+## Inciso d
+
