@@ -15,6 +15,8 @@ Se puede observar que la amplitud y la frecuencia de la onda portadora se mantie
 
 ## Inciso b
 
+![Inciso b](./TP1/Ejercicio_3/imagenes/ondas_psk_b.png)
+
 ## Inciso c
 
 ## Inciso d
