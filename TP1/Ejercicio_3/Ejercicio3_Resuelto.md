@@ -10,6 +10,8 @@ Transmitir en frecuencias bajas por el espacio libre genera una enorme atenuaci�
 Por estos motivos, la información digital no se envía por el aire "cruda", sino que se recurre a la modulación, donde se alteran los parámetros (amplitud, frecuencia o fase) de una onda electromagnética (portadora) para que transporte los datos a través de antenas de tamaño práctico y en bandas de frecuencia reguladas.
 
 ## Inciso a
+Se está representando PSK (Phase Shift Keying o Modulación por Desplazamiento de Fase).
+Se puede observar que la amplitud y la frecuencia de la onda portadora se mantienen constantes en todo momento. Lo que cambia es la fase de la onda. Cuando el bit es "0", la onda inicia su ciclo "subiendo" (fase 0°). Cuando el bit es "1", la fase se invierte y la onda inicia su ciclo "bajando".
 
 ## Inciso b
 
