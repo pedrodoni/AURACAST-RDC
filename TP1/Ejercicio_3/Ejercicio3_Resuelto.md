@@ -19,5 +19,13 @@ Se puede observar que la amplitud y la frecuencia de la onda portadora se mantie
 
 ## Inciso c
 
+**ASK** (Amplitude Shift Keying - Modulación por Desplazamiento de Amplitud): Mantiene la frecuencia y la fase de la onda constantes, pero altera su amplitud. Por ejemplo, se transmite la portadora a una amplitud máxima para representar un "1" lógico, y a una amplitud menor para representar un "0".
+
+**FSK** (Frequency Shift Keying - Modulación por Desplazamiento de Frecuencia): Mantiene la amplitud y la fase constantes, pero alterna entre dos frecuencias portadoras distintas para diferenciar los estados lógicos "0" y "1".
+
+**QAM** (Quadrature Amplitude Modulation - Modulación de Amplitud en Cuadratura): Es una técnica combinada y de orden superior. Modifica simultáneamente la amplitud y la fase de la señal portadora (combinando los principios de ASK y PSK). Esto permite definir múltiples estados o "símbolos", logrando transmitir varios bits en un solo ciclo de reloj, lo cual la convierte en el estándar de las redes inalámbricas modernas de alta capacidad (Ej. Wi-Fi).
+
+![Inciso c](./imagenes/modulaciones.png)
+
 ## Inciso d
 
