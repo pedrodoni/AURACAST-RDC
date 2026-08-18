@@ -29,3 +29,8 @@ Se puede observar que la amplitud y la frecuencia de la onda portadora se mantie
 
 ## Inciso d
 
+El Bit Error Rate (BER), o Tasa de Error de Bits, es una métrica fundamental en telecomunicaciones que cuantifica la confiabilidad de un canal de comunicación digital. Se define como la relación entre la cantidad de bits que se reciben de manera incorrecta (alterados por el ruido o la interferencia) y el número total de bits transmitidos durante un período de tiempo determinado.
+
+$$BER = \frac{\text{Número de bits recibidos con error}}{\text{Número total de bits transmitidos}}$$
+
+El objetivo en cualquier red de computadoras es mantener el BER lo más bajo posible y la modulación PSK cumple con ello. La información está codificada en la fase de la onda. El ruido eléctrico que se suma en el trayecto casi no altera el ángulo de fase de la señal. Por eso, la modulación PSK requiere mucha menos potencia de señal para lograr una tasa de error baja comparada con las otras (FSK y ASK).
