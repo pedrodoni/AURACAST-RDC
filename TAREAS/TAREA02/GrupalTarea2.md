@@ -61,9 +61,18 @@ Existen cuatro conceptos interrelacionados:
 
 **a)** En una configuración multipunto, sólo un dispositivo puede trasmitir cada vez, ¿por qué?
 
+**Respuesta a):**
+Porque al estar en multipunto, comparten el mismo medio físico. Si transmiten al mismo tiempo, las señales chocan (generan interferencias) y la información llega corrupta al receptor.
+
 **b)** Hay dos posibles aproximaciones que refuerzan la idea de que, en un momento dado, sólo un dispositivo puede transmitir. En un sistema centralizado, una estación es la responsable del control y podrá transmitir o decidir que lo haga cualquier otra. En el método descentralizado, las estaciones cooperan entre sí, estableciéndose una serie de turnos. ¿Qué ventajas y desventajas presentan ambas aproximaciones?
 
-*(Esperando respuesta...)*
+**Respuesta b): Centralizado vs. Descentralizado**
+* **Centralizado (una estación controla todo)**:
+  * **Ventaja**: Mucho orden, elimina las colisiones de raíz.
+  * **Desventaja**: Si se rompe el equipo central, se paraliza toda la red.
+* **Descentralizado (las estaciones cooperan entre sí)**:
+  * **Ventaja**: Es robusto frente a fallos; si un equipo se apaga, la red sigue funcionando.
+  * **Desventaja**: Es más complejo de implementar y requiere procesar "mensajes extra" solo para coordinarse.
 
 ## Ejercicio 3.2
 
@@ -83,9 +92,9 @@ Simplifique las siguientes expresiones:
 
 El sonido se puede modelar mediante funciones sinusoidales. Compare la frecuencia relativa y la longitud de onda de las notas musicales. Piense que la velocidad del sonido es igual a 330 m/s y que las frecuencias de una escala musical son:
 
-| Nota | DO | RE | MI | FA | SOL | LA | SI | DO |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Frecuencia** | 264 | 297 | 330 | 352 | 396 | 440 | 495 | 528 |
+| Nota           |  DO   |  RE   |  MI   |  FA   |  SOL  |  LA   |  SI   |  DO   |
+| :------------- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Frecuencia** |  264  |  297  |  330  |  352  |  396  |  440  |  495  |  528  |
 
 *(Esperando respuesta...)*
 
