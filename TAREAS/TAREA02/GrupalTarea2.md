@@ -78,7 +78,9 @@ Porque al estar en multipunto, comparten el mismo medio físico. Si transmiten a
 
 Una señal tiene una frecuencia fundamental de 1000 Hz. ¿Cuál es su periodo?
 
-*(Esperando respuesta...)*
+**Respuesta:**
+* **Fórmula:** $T = 1/f$
+* **Cálculo:** $T = 1 / 1000 = 0,001 \text{ s}$ (o $1 \text{ ms}$)
 
 ## Ejercicio 3.3
 
@@ -86,7 +88,14 @@ Simplifique las siguientes expresiones:
 **a)** `sen(2πft - π) + sen(2πft + π)`
 **b)** `sen(2πft) + sen(2πft - π)`
 
-*(Esperando respuesta...)*
+**Respuesta:**
+Para simplificar estas expresiones usamos la **regla trigonométrica clave:** $\sin(x \pm \pi) = -\sin(x)$
+
+**a)** $\sin(2\pi ft-\pi) + \sin(2\pi ft+\pi)$
+$$-\sin(2\pi ft) - \sin(2\pi ft) = -2\sin(2\pi ft)$$
+
+**b)** $\sin(2\pi ft) + \sin(2\pi ft-\pi)$
+$$\sin(2\pi ft) - \sin(2\pi ft) = 0$$
 
 ## Ejercicio 3.4
 
