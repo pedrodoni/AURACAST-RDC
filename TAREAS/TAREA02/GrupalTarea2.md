@@ -148,7 +148,31 @@ Se sacrifica intencionalmente una (o dos) de las 64 combinaciones disponibles pa
 * **Paginas de Codigos:**
 Al transmitir el caracter especial el sistema le indica al receptor que el significado de las 64 combinaciones siguientes cambia por completo, pasando a leer una "pagina" de caracteres alternativos. Al reservar un codigo para alternar entre ambos estados quedan 63 combinaciones utiles para datos, multiplicar esto por ambos bancos se obtienen 126 posibles representaciones.
 
-## Ejercicio 3.12 - 3.15
+## Ejercicio 3.12
+
+La relacion fisica del ancho de banda analogico se define por: 
+
+B = 1/2 x H x V x f
+
+- **B:**
+Ancho de Banda. 
+
+- **H:**
+Resolucion Horizontal
+
+- **V:**
+Resolucion Vertical
+
+- **F:**
+Frecuencia
+
+El factor (1/2) existe porque se necesita dos pixeles contiguas para generar un ciclo completo de la señal de 1Hz. Si el sistema se amplia de 4MHz a 5MHz el factor de crecimiento total es: 
+
+5/4 = 1.25
+
+El canal esta otorgando un 25% mas de capacidad para transmitir datos, como todos los terminos se multiplican directamente, el incremento se traslada de forma proporcional a ambas resoluciones (Horizontal y Vertical). Pero fisicamente es imposible aumentar ambas resoluciones.
+
+## Ejercicio 3.13
 ### a)
 Es solo el producto de los elementos que componen la señal en un segundo:
 - 480 X 500 = 240000 pixeles.
@@ -173,6 +197,8 @@ Dando una capacidad maxima del canal de 52.3Mbps.
 
 ### c)
 Se necesitaria enviar mas informacion por cada pixel, lo que significa que el factor bits por pixel obligatoriamente va a aumentar. Para mantener la R constante podemos reducir la resolucion espacial (480 x 500) o reducir la resolucion temporal (30 FPS).
+
+## Ejercicio 3.14
 
 # Consigna D: Modulación en AM en Python
 
