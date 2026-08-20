@@ -125,6 +125,19 @@ Si la curva trazada con una línea continua de la Figura 3.17 representa al `sen
 **Resultado final:**
 $$s(t) = 2\sin(4\pi t + \pi)$$
 
+## Ejercicio 3.10 - 3.15
+
+En un sistema de transmision real las implicaciones son:
+
+* **El Limite Fisico:**
+Debido a que fisicamente es imposible diseñar un transmisor o receptor con un ancho de banda infinito. Todo medio fisico actua naturalmente como un filtro pasa-bajos lo que en cierta frecuencia cortara abruptamente los componentes de alta frecuencia de la señal original.
+
+* **Deformacion del Pulso:**
+Las frecuencias mas altas son las responsables de formar los cambios abruptos. Al pasar por un canal real que elimina esas frecuencias altas el pulso que llega al receptor pierde sus bordes cuadrados, se vuelve una onda redonda y ensanchada.
+
+* **Interferencia Intersimbolica (ISI):**
+Como el canal elimina las altas frecuencias y el pulso se ensancha en el tiempo, la "cola" de la señal de un bit invade el espacio de tiempo asignado al siguiente bit. Si se intenta enviar datos demasiado rápido, los pulsos redondos se superpondrán unos con otros hasta el punto en que el receptor ya no podrá distinguir dónde termina un "1" y dónde empieza un "0".
+
 # Consigna D: Modulación en AM en Python
 
 ## Código de Modulación AM (basado en el siguiente link)
