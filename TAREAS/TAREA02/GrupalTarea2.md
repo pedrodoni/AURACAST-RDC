@@ -138,7 +138,7 @@ Las frecuencias mas altas son las responsables de formar los cambios abruptos. A
 * **Interferencia Intersimbolica (ISI):**
 Como el canal elimina las altas frecuencias y el pulso se ensancha en el tiempo, la "cola" de la señal de un bit invade el espacio de tiempo asignado al siguiente bit. Si se intenta enviar datos demasiado rápido, los pulsos redondos se superpondrán unos con otros hasta el punto en que el receptor ya no podrá distinguir dónde termina un "1" y dónde empieza un "0".
 
-## Ejercicio 3.11 - 3.15
+## Ejercicio 3.11
 
 Un codigo de 6 bits solo permite calcular 2^6 = 64 combinaciones unicas, para solucionar esto y asignar los 100 caracteres se implemento un diseño basado en estados y se lograba lo siguiente:
 
@@ -147,6 +147,15 @@ Se sacrifica intencionalmente una (o dos) de las 64 combinaciones disponibles pa
 
 * **Paginas de Codigos:**
 Al transmitir el caracter especial el sistema le indica al receptor que el significado de las 64 combinaciones siguientes cambia por completo, pasando a leer una "pagina" de caracteres alternativos. Al reservar un codigo para alternar entre ambos estados quedan 63 combinaciones utiles para datos, multiplicar esto por ambos bancos se obtienen 126 posibles representaciones.
+
+## Ejercicio 3.12 - 3.15
+### a)
+Es solo el producto de los elementos que componen la señal en un segundo:
+- 480 X 500 = 240000 pixeles.
+- Con 32 niveles de intensidad -> log_2(32) = 5 bits/pixel
+- Con 30 imagenes por segundo -> R = 240000 x 5 x 30 = 36000000 bps
+
+Siendo el resultado 36Mbps
 
 
 
