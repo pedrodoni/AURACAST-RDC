@@ -55,3 +55,42 @@ Existen cuatro conceptos interrelacionados:
 - **El ruido:** nivel medio de ruido presente en el camino de transmisión.
 - **La tasa de errores:** frecuencia con la que ocurren errores (un 1 recibido como 0, o viceversa).
 
+# Ejercicios
+
+## Ejercicio 3.1
+
+**a)** En una configuración multipunto, sólo un dispositivo puede trasmitir cada vez, ¿por qué?
+
+**b)** Hay dos posibles aproximaciones que refuerzan la idea de que, en un momento dado, sólo un dispositivo puede transmitir. En un sistema centralizado, una estación es la responsable del control y podrá transmitir o decidir que lo haga cualquier otra. En el método descentralizado, las estaciones cooperan entre sí, estableciéndose una serie de turnos. ¿Qué ventajas y desventajas presentan ambas aproximaciones?
+
+*(Esperando respuesta...)*
+
+## Ejercicio 3.2
+
+Una señal tiene una frecuencia fundamental de 1000 Hz. ¿Cuál es su periodo?
+
+*(Esperando respuesta...)*
+
+## Ejercicio 3.3
+
+Simplifique las siguientes expresiones:
+**a)** `sen(2πft - π) + sen(2πft + π)`
+**b)** `sen(2πft) + sen(2πft - π)`
+
+*(Esperando respuesta...)*
+
+## Ejercicio 3.4
+
+El sonido se puede modelar mediante funciones sinusoidales. Compare la frecuencia relativa y la longitud de onda de las notas musicales. Piense que la velocidad del sonido es igual a 330 m/s y que las frecuencias de una escala musical son:
+
+| Nota | DO | RE | MI | FA | SOL | LA | SI | DO |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Frecuencia** | 264 | 297 | 330 | 352 | 396 | 440 | 495 | 528 |
+
+*(Esperando respuesta...)*
+
+## Ejercicio 3.5
+
+Si la curva trazada con una línea continua de la Figura 3.17 representa al `sen(2πt)`, ¿qué función corresponde a la línea discontinua? En otras palabras, la línea discontinua se puede expresar como `A sen(2πft + φ)`; ¿qué son A, f y φ?
+
+*(Esperando respuesta...)*
