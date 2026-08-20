@@ -200,6 +200,24 @@ Se necesitaria enviar mas informacion por cada pixel, lo que significa que el fa
 
 ## Ejercicio 3.14
 
+Se necesita la ecuacion de la potencia de ruido termico: 
+
+N = k x T x B
+
+- **N:**
+Potencia del ruido termico a la salida-
+
+- **k:**
+Constante de Boltzmann (1.38 x 10^-23 J/K)
+
+- **T:**
+Temperatura equivalente de ruido en Kelvin (10000 K).
+
+- **B:**
+Ancho de banda (10 MHz)
+
+Lo cual multiplicando todo nos da N = 1.38 x 10^-12 W. El nivel de ruido termico a la salida es de 1.38 picovatios.
+
 # Consigna D: Modulación en AM en Python
 
 ## Código de Modulación AM (basado en el siguiente link)
