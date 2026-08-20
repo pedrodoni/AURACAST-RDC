@@ -105,7 +105,13 @@ El sonido se puede modelar mediante funciones sinusoidales. Compare la frecuenci
 | :------------- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | **Frecuencia** |  264  |  297  |  330  |  352  |  396  |  440  |  495  |  528  |
 
-*(Esperando respuesta...)*
+**Respuesta:**
+* **Fórmula:** $\lambda = v/f$
+* **Relación:** Son **inversamente proporcionales**; a mayor frecuencia, menor longitud de onda ($\lambda$).
+* **Ejemplos representativos:**
+  * **DO:** $\lambda = 330 / 264 = 1,25 \text{ m}$
+  * **LA:** $\lambda = 330 / 440 = 0,75 \text{ m}$
+  * **DO (octava alta):** $\lambda = 330 / 528 = 0,625 \text{ m}$
 
 ## Ejercicio 3.5
 
