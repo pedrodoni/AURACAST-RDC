@@ -125,7 +125,7 @@ Si la curva trazada con una línea continua de la Figura 3.17 representa al `sen
 **Resultado final:**
 $$s(t) = 2\sin(4\pi t + \pi)$$
 
-## Ejercicio 3.10 - 3.15
+## Ejercicio 3.10
 
 En un sistema de transmision real las implicaciones son:
 
@@ -137,6 +137,18 @@ Las frecuencias mas altas son las responsables de formar los cambios abruptos. A
 
 * **Interferencia Intersimbolica (ISI):**
 Como el canal elimina las altas frecuencias y el pulso se ensancha en el tiempo, la "cola" de la señal de un bit invade el espacio de tiempo asignado al siguiente bit. Si se intenta enviar datos demasiado rápido, los pulsos redondos se superpondrán unos con otros hasta el punto en que el receptor ya no podrá distinguir dónde termina un "1" y dónde empieza un "0".
+
+## Ejercicio 3.11 - 3.15
+
+Un codigo de 6 bits solo permite calcular 2^6 = 64 combinaciones unicas, para solucionar esto y asignar los 100 caracteres se implemento un diseño basado en estados y se lograba lo siguiente:
+
+* **Caracteres de Desplazamiento:**
+Se sacrifica intencionalmente una (o dos) de las 64 combinaciones disponibles para que no represente un caracter imprimible, sino para que funcione como un comando interno de "cambio de estado".
+
+* **Paginas de Codigos:**
+Al transmitir el caracter especial el sistema le indica al receptor que el significado de las 64 combinaciones siguientes cambia por completo, pasando a leer una "pagina" de caracteres alternativos. Al reservar un codigo para alternar entre ambos estados quedan 63 combinaciones utiles para datos, multiplicar esto por ambos bancos se obtienen 126 posibles representaciones.
+
+
 
 # Consigna D: Modulación en AM en Python
 
