@@ -157,6 +157,19 @@ Es solo el producto de los elementos que componen la señal en un segundo:
 
 Siendo el resultado 36Mbps
 
+### b)
+Se usa el teorema de Shannon-Hartley, hacemos conversion en relacion a la señal-ruido (S/N)
+
+35 = 10log_10(S/N)
+S/N = 10^3.5 = 3162.28
+
+Calculo de capacidad, ancho de banda (B)
+
+B = 4.5 x 10^6 Hz
+C = B log_2(1 + S/N)
+C = 4.5 x 10^6 x log_2(1 + 3162.28) = 5221500bps
+
+Dando una capacidad maxima del canal de 52.3Mbps.
 
 
 # Consigna D: Modulación en AM en Python
