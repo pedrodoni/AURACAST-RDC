@@ -171,6 +171,8 @@ C = 4.5 x 10^6 x log_2(1 + 3162.28) = 5221500bps
 
 Dando una capacidad maxima del canal de 52.3Mbps.
 
+### c)
+Se necesitaria enviar mas informacion por cada pixel, lo que significa que el factor bits por pixel obligatoriamente va a aumentar. Para mantener la R constante podemos reducir la resolucion espacial (480 x 500) o reducir la resolucion temporal (30 FPS).
 
 # Consigna D: Modulación en AM en Python
 
