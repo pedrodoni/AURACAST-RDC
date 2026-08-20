@@ -124,3 +124,125 @@ Si la curva trazada con una línea continua de la Figura 3.17 representa al `sen
 
 **Resultado final:**
 $$s(t) = 2\sin(4\pi t + \pi)$$
+
+# Consigna D: Modulación en AM en Python
+
+## Código de Modulación AM (basado en el siguiente link)
+
+https://programacionpython80889555.wordpress.com/
+
+El siguiente código implementa la modulación AM utilizando la librería `numpy` para los cálculos trigonométricos y `matplotlib` para la generación de los gráficos.
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+fp = 40000     # Frecuencia de la señal portadora
+fm = 400       # Frecuencia de la señal moduladora
+
+Ap = 5         # Amplitud de la portadora y moduladora
+
+ka = 1         # ka = 1 (100% modulación), ka < 1 (submodulación), ka > 1 (sobremodulación)
+
+t = np.linspace(0, 0.005, 1000)
+
+moduladora = Ap * np.cos(2 * np.pi * fm * t)
+
+portadora = Ap * np.cos(2 * np.pi * fp * t)
+
+am = Ap * (1 + ka * np.cos(2 * np.pi * fm * t)) * np.cos(2 * np.pi * fp * t)
+
+plt.figure(figsize=(10, 8))
+
+# Gráfico 1: Señal Moduladora
+plt.subplot(3, 1, 1)
+plt.plot(t, moduladora, color='green')
+plt.title('Señal Moduladora (Información)')
+plt.xlabel('Tiempo (s)')
+plt.ylabel('Amplitud')
+plt.grid(True)
+
+# Gráfico 2: Señal Portadora
+plt.subplot(3, 1, 2)
+plt.plot(t, portadora, color='red')
+plt.title('Señal Portadora (Alta Frecuencia)')
+plt.xlabel('Tiempo (s)')
+plt.ylabel('Amplitud')
+plt.grid(True)
+
+# Gráfico 3: Señal Modulada AM
+plt.subplot(3, 1, 3)
+plt.plot(t, am, color='blue')
+plt.title(f'Señal Modulada AM (Índice ka = {ka})')
+plt.xlabel('Tiempo (s)')
+plt.ylabel('Amplitud')
+plt.grid(True)
+
+plt.tight_layout()
+plt.show()
+```
+
+## Pruebas y Análisis al Variar los Parámetros
+
+A continuación, se detalla el análisis del comportamiento de la señal modulada en amplitud (AM) al realizar pruebas variando los parámetros de amplitud ($A_p$), frecuencias ($f_p$, $f_m$) y el índice de modulación ($k_a$).
+
+
+
+### A. Variación del Índice de Modulación ($k_a$)
+
+El índice de modulación $k_a$ (también denotado como $m$) define la relación entre la variación de la amplitud de la envolvente y la amplitud de la portadora pura. Es el parámetro crítico que determina la calidad y fidelidad de la transmisión.
+
+1. **Submodulación ($k_a < 1$, ejemplo: $k_a = 0.5$):**
+
+![](imagenes/ka05.png)
+
+   * **Comportamiento:** La amplitud de la portadora varía de forma proporcional a la señal moduladora, pero en sus puntos mínimos la señal nunca llega a tocar el nivel cero.
+   * **Conclusión:** Es una transmisión segura. La envolvente preserva la forma exacta del mensaje original, lo que permite demodularla fácilmente mediante receptores sencillos (como un detector de envolvente con diodo) sin introducir distorsión.
+
+2. **Modulación Crítica o Completa ($k_a = 1.0$ o $100\%$):**
+
+![](imagenes/ka1.png)
+
+   * **Comportamiento:** Los valles de la envolvente llegan exactamente a tocar el eje de amplitud cero ($0\text{ V}$) en los mínimos de la señal moduladora.
+   * **Conclusión:** Representa el estado óptimo de transmisión en AM estándar, ya que se aprovecha al máximo la potencia de la portadora para transportar la información útil sin llegar a distorsionar la señal.
+
+3. **Sobremodulación ($k_a > 1$, ejemplo: $k_a = 1.5$):**
+
+![](imagenes/ka15.png)
+
+   * **Comportamiento:** En los valles del mensaje, la envolvente intenta tomar valores negativos, lo que causa un cruce por cero, una inversión de fase de $180^\circ$ en la portadora y la cancelación/recorte del pico inferior.
+   * **Conclusión:** Genera **distorsión por sobremodulación** (recorte de envolvente) en el receptor. Además, produce componentes armónicas no deseadas en el espectro frecuencial, lo que causa interferencia en los canales de radio adyacentes (esparcimiento espectral).
+
+
+
+### B. Variación de las Frecuencias ($f_p$ y $f_m$)
+
+La relación entre la frecuencia de la portadora y la de la moduladora determina la definición y resolución con la que se transmite la información:
+
+1. **Relación de Frecuencias ($f_p \gg f_m$):**
+
+![](imagenes/relaciondefrequencia.png)
+
+   * **Comportamiento:** Para una modulación AM efectiva, la frecuencia de la portadora ($f_p$) debe ser significativamente mayor que la frecuencia de la señal de información ($f_m$). 
+   * **Observación:** En la prueba realizada con $f_p = 40000\text{ Hz}$ y $f_m = 400\text{ Hz}$, la portadora oscila 100 veces dentro de un solo período de la señal moduladora, dibujando de forma clara y nítida el contorno de la envolvente.
+
+2. **Aumento de la Frecuencia Moduladora ($f_m$):**
+
+![](imagenes/fm.png)
+
+   * **Comportamiento:** Al aumentar $f_m$, los ciclos de la envolvente ocurren con mayor rapidez en el tiempo (disminuye su período $T_m = 1/f_m$).
+   * **Efecto Espectral:** Incrementa el ancho de banda requerido para la transmisión, el cual en AM equivale a $BW = 2 \cdot f_m$.
+
+3. **Disminución de la Frecuencia Portadora ($f_p$):**
+
+![](imagenes/fp.png)
+
+   * **Comportamiento:** Si $f_p$ se aproxima demasiado a $f_m$, la cantidad de ciclos de la portadora dentro de la envolvente es insuficiente.
+   * **Conclusión:** La señal modulada pierde definición visual y técnica, dificultando la separación de las señales en el proceso de demodulación en el receptor.
+
+---
+
+### C. Variación de la Amplitud ($A_p$)
+
+* **Comportamiento:** Incrementar o reducir el valor de $A_p$ escala proporcionalmente el nivel de tensión (voltaje) de todas las señales del sistema.
+* **Impacto:** Si la potencia del emisor aumenta, la relación señal-ruido ($SNR$) en el receptor mejora, lo que permite cubrir mayor alcance geográfico, manteniendo constante la profundidad de modulación si $k_a$ no varía.
