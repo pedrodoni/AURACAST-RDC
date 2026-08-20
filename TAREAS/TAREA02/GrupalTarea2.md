@@ -218,6 +218,20 @@ Ancho de banda (10 MHz)
 
 Lo cual multiplicando todo nos da N = 1.38 x 10^-12 W. El nivel de ruido termico a la salida es de 1.38 picovatios.
 
+## Ejercicio 3.15
+
+Hacemos la conversion señal-ruido (S/N):
+
+3 = 10 log_10(S/N)
+S/N = 1.995 = 2
+
+Calculo de capacidad (B = 300Hz):
+
+C = B log_2(1 + S/N)
+C = 475.5 bps
+
+Dando como resultado una capacidad maxima teorica de 475.5bps.
+
 # Consigna D: Modulación en AM en Python
 
 ## Código de Modulación AM (basado en el siguiente link)
