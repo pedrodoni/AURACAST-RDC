@@ -117,4 +117,10 @@ El sonido se puede modelar mediante funciones sinusoidales. Compare la frecuenci
 
 Si la curva trazada con una línea continua de la Figura 3.17 representa al `sen(2πt)`, ¿qué función corresponde a la línea discontinua? En otras palabras, la línea discontinua se puede expresar como `A sen(2πft + φ)`; ¿qué son A, f y φ?
 
-*(Esperando respuesta...)*
+**Respuesta:**
+* **Amplitud ($A$):** $2$. El pico de la onda discontinua llega exactamente hasta la marca de 2,0.
+* **Frecuencia ($f$):** $2\text{ Hz}$. Completa un ciclo entero en 0,5 segundos ($T=0,5$), por ende entran 2 ciclos completos en un segundo.
+* **Fase ($\phi$):** $\pi$ radianes. La onda arranca en 0 pero baja hacia los negativos; esto equivale a una función seno invertida (un desfasaje exacto de $180^\circ$ o $\pi$).
+
+**Resultado final:**
+$$s(t) = 2\sin(4\pi t + \pi)$$
