@@ -1,6 +1,6 @@
 # AURACAST-RDC
 
-Repositorio del grupo **AURACAST** (equipo *auratech*) para la materia **Redes de Computadoras**. Reúne las resoluciones de los trabajos prácticos (TP) y las tareas de la cursada, tanto en su versión grupal como individual.
+Repositorio del grupo **AURACAST** (equipo *auratech*) para la materia **Redes de Computadoras**. Reúne las resoluciones grupales de los trabajos prácticos (TP) y las tareas de la cursada.
 
 ## Integrantes
 
@@ -21,7 +21,8 @@ Repositorio del grupo **AURACAST** (equipo *auratech*) para la materia **Redes d
 
 ```
 TP'S/
-└── TP1/                            # Ver TP'S/README.md para el detalle por ejercicio
+├── TP1/                             # Ver TP'S/README.md para el detalle por ejercicio
+└── TP2/
 
 TAREAS/
 └── TAREA02/                        # Ver TAREAS/README.md para el detalle por consigna
