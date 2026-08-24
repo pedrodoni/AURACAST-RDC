@@ -125,6 +125,114 @@ Si la curva trazada con una línea continua de la Figura 3.17 representa al `sen
 **Resultado final:**
 $$s(t) = 2\sin(4\pi t + \pi)$$
 
+## Ejercicio 3.6
+**Consigna:** Exprese la señal $(1 + 0,1 \cos {5t}) \cdot \cos {100t}$ como combinación lineal de funciones sinusoidales; encuentre la amplitud, frecuencia y fase de cada una de las componentes. (Sugerencia: use la expresión del $\cos a \cdot \cos b$).
+
+**Respuesta:**
+Se aplica propiedad distributiva.
+$$f(t) = (1 + 0,1 \cos(5t)) \cdot \cos(100t)$$
+$$f(t) = \cos(100t) + 0,1 \cos(5t) \cdot \cos(100t)$$
+
+Se aplica la identidad trigonométrica sugerida para el producto de cosenos:
+$\cos(a) \cdot \cos(b) = \frac{1}{2} \cdot [\cos(a+b) + \cos(a-b)]$
+
+Aplicando esto al segundo término (con $a = 100t$ y $b = 5t$) y $0,1 = \frac{1}{10}$:
+$$0,1 \cdot \cos(5t) \cdot \cos(100t) = 0,1 \cdot \frac{1}{2} \cdot [\cos(100t + 5t) + \cos(100t - 5t)]$$
+$$= \frac{1}{10} \cdot \frac{1}{2} \cdot [\cos(105t) + \cos(95t)]$$
+$$= \frac{1}{20} \cdot [\cos(105t) + \cos(95t)]$$
+$$= \frac{1}{20} \cos(105t) + \frac{1}{20} \cos(95t)$$
+
+Reemplazando en la ecuación original, obtenemos la señal expresada como combinación lineal de funciones sinusoidales:
+$$f(t) = \cos(100t) + \frac{1}{20} \cos(105t) + \frac{1}{20} \cos(95t)$$
+
+Una función sinusoidal general en cosenos tiene la forma $A \cos(\omega t + \phi)$, donde $\omega = 2\pi f$. A partir de esto, identificamos los parámetros de cada componente:
+
+- **Primera componente:** $\cos(100t)$
+  - **Amplitud ($A_1$):** $1$
+  - **Frecuencia ($f_1$):** $\frac{100}{2\pi} = \frac{50}{\pi} \approx 15,92 \text{ Hz}$ (con frecuencia angular $\omega_1 = 100 \text{ rad/s}$)
+  - **Fase ($\phi_1$):** $0 \text{ rad}$
+
+- **Segunda componente:** $\frac{1}{20} \cos(105t)$
+  - **Amplitud ($A_2$):** $\frac{1}{20}$
+  - **Frecuencia ($f_2$):** $\frac{105}{2\pi} = \frac{52,5}{\pi} \approx 16,71 \text{ Hz}$ (con frecuencia angular $\omega_2 = 105 \text{ rad/s}$)
+  - **Fase ($\phi_2$):** $0 \text{ rad}$
+
+- **Tercera componente:** $\frac{1}{20} \cos(95t)$
+  - **Amplitud ($A_3$):** $\frac{1}{20}$
+  - **Frecuencia ($f_3$):** $\frac{95}{2\pi} = \frac{47,5}{\pi} \approx 15,12 \text{ Hz}$ (con frecuencia angular $\omega_3 = 95 \text{ rad/s}$)
+  - **Fase ($\phi_3$):** $0 \text{ rad}$
+
+
+## Ejercicio 3.7
+**Consigna:** Encuentre el periodo de la función $f(t) = (10 \cdot \cos{t})²$
+
+**Respuesta:**
+Se aplica la propiedad distributiva de la potenciación con respecto a la multiplicación.
+$$f(t) = 10^2 \cdot \cos²{t} = 100 \cdot \cos²{t}$$
+Se aplica la identidad trigonométrica del ángulo doble para el coseno al cuadrado:$\cos^2(x) = \frac{1 + \cos(2x)}{2}$ donde x = t
+
+$$f(t) = 100 \cdot \left( \frac{1 + \cos(2t)}{2} \right)$$
+Propiedad distributiva de la multiplicación con respecto a la suma.
+$$f(t) = 50 \cdot (1 + \cos(2t))$$
+Propiedad distributiva de la multiplicación con respecto a la suma.
+$$f(t) = 50 + 50 \cos(2t)$$
+
+Frecuencia angular: $\omega = 2 \text{ rad/s}$
+
+Periodo $T$ es:
+$$\omega = \frac{2\pi}{T}$$
+
+$$T = \frac{2\pi}{\omega} = \frac{2\pi}{2} = \pi$$
+
+Entonces, el periodo de la función es **$T = \pi$**.
+
+## Ejercicio 3.8
+**Consigna:**  Sean dos funciones periódicas $f_1(t)$ y $f_2(t)$, con periodos $T_1$ y $T_2$ respectivamente. ¿Es periódica la función $f(t) = f_1(t) + f_2(t)$? Si es así, demuéstrelo. Si no, ¿bajo qué condiciones $f(t)$ será periódica?
+
+**Respuesta:**
+Para que $f(t)$ sea periódica se debe cumplir que la relación (cociente) entre sus periodos individuales $T_1$ y $T_2$ debe ser un número racional. Es decir, la división $\frac{T_1}{T_2}$ debe poder expresarse como una fracción exacta de dos números enteros ($m$ y $n$).
+
+$$\frac{T_1}{T_2} = \frac{m}{n} \quad \text{donde } m, n \text{ son números enteros.}$$ 
+
+**Demostración:**
+
+Para que la función suma $f(t)$ sea periódica, debe existir un periodo fundamental común $T$ ($T > 0$) tal que la función se repita idénticamente para cualquier instante $t$:
+
+$$ f(t + T) = f(t) $$
+$$ f_1(t + T) + f_2(t + T) = f_1(t) + f_2(t) $$
+
+Para satisfacer la igualdad para todo $t$, el nuevo periodo fundamental $T$ debe contener una cantidad entera y exacta de períodos de ambas funciones originales. Por lo tanto, $T$ debe ser un múltiplo común de $T_1$ y $T_2$:
+
+1. En relación a la primera función:  
+   $$ T = n \cdot T_1 \quad (n \in \mathbb{Z}) $$
+
+2. En relación a la segunda función:  
+   $$ T = m \cdot T_2 \quad (m \in \mathbb{Z}) $$
+
+Método de igualación:
+
+$$ n \cdot T_1 = m \cdot T_2 $$
+
+Reordenando algebraicamente la ecuación:
+
+$$\frac{T_1}{T_2} = \frac{m}{n}$$
+
+**Conclusión:**
+Los enteros $m$ y $n$ representan la cantidad de ciclos completos que deben transcurrir para las funciones $f_2(t)$ y $f_1(t)$ respectivamente, antes de que ambas vuelvan a coincidir en su fase inicial. Si dicha relación no resulta en un número racional, significa que las ondas nunca lograrán sincronizarse de nuevo. Al no existir un periodo fundamental común $T$ donde ambas completen ciclos exactos simultáneamente, la señal resultante pierde la periodicidad.
+
+## Ejercicio 3.9
+**Consigna:** La Figura 3.4 muestra el efecto resultante al eliminar las componentes de alta frecuencia de un pulso cuadrado, considerando sólo las componentes de baja frecuencia. ¿Cómo sería la señal resultante en el caso contrario (es decir, quedándose con todos los armónicos de frecuencia alta y eliminando los de bajas frecuencias)?
+
+![Ejercicio 3.9](./imagenes/figura-3-4.png)
+
+**Respuesta:**
+
+Si aplicamos el caso contrario al de la figura (funcionando como un **filtro pasa-altos**), eliminando las componentes de baja frecuencia y dejando solo los armónicos altos.
+
+![Ejercicio 3.9](./imagenes/filtro-paso-alto.png)
+
+En conclusión, al sumar únicamente estas componentes rápidas sobrevivientes, la señal resultante dejará de parecerse a un pulso cuadrado para convertirse en una **serie de impulsos (picos muy finos positivos y negativos)** ubicados en los flancos de la señal original, permaneciendo cerca de cero el resto del tiempo.
+
 ## Ejercicio 3.10
 
 En un sistema de transmision real las implicaciones son:
