@@ -115,15 +115,37 @@ Como el preámbulo no es información útil, existe un **compromiso de diseño**
 ---
 
 ## Inciso d
+Estas son algunas de las formas mediante las cuales un protocolo puede determinar dónde termina una trama, entre otras. Tomamos las sujeridas que son las mas widely-used y agregamos una mas que nos pareció interesante extraida del libro "Redes de Computadoras" de Tanenbaum
 
+### 1. Longitud fija
+Todas las tramas tienen un tamaño idéntico y previamente acordado. El receptor cuenta bits/bytes y, al alcanzar ese número, sabe que la trama terminó.
+- **Ventaja:** simple, sin campos extra.
+- **Desventaja:** desperdicia ancho de banda si los datos no llenan el tamaño fijo, y un error de conteo desincroniza todas las tramas siguientes.
+
+### 2. Campo que indica la longitud
+La trama incluye en su encabezado un campo numérico que indica cuántos bytes tiene el cuerpo. El receptor lee ese valor y cuenta esa cantidad exacta.
+- **Ventaja:** permite tramas de longitud variable.
+- **Desventaja:** si ese campo se corrompe, se pierde la sincronización con las tramas siguientes.
+
+### 3. Caracteres/secuencias delimitadoras
+Se usan bytes o bits especiales (banderas) al inicio y fin de la trama, como el `01111110` de HDLC. Si esa secuencia aparece dentro de los datos, se usa **relleno (byte/bit stuffing)**: se inserta un bit/byte de escape que el receptor luego quita.
+- **Ventaja:** longitud variable y fácil resincronización ante pérdida de una trama.
+- **Desventaja:** requiere procesamiento extra para insertar y remover el relleno.
+
+### 4. Violaciones de codificación de la capa física
+Algunos esquemas de codificación de señal (por ejemplo, Manchester, usado en Ethernet clásico) representan cada bit válido con una combinación específica de niveles eléctricos. Existen combinaciones que nunca se usan para datos válidos (por ejemplo, alto-alto o bajo-bajo). El protocolo reserva esas combinaciones "inválidas" como marcadores de inicio y fin de trama.
+- **Ventaja:** no hay riesgo de que el delimitador aparezca por casualidad en los datos, y no requiere relleno (stuffing).
+- **Desventaja:** depende del esquema de codificación física utilizado, por lo que no es aplicable a cualquier medio de transmisión.
 
 ---
 
 ## Fuentes
 
 - **Stallings, W.** — *Comunicaciones y Redes de Computadores*, 7ª ed., Pearson.
+- **Tanenbaum** — *Redes de Computadoras*, 7ª ed., Pearson.
+
 - **Clase 02 – Material Extra 1** 
 - **Clase 02 – Material Extra 2** 
-- **Consigna:** [RC - TP N2.pdf](<../RC - TP N2.pdf>), ejercicio 4.
+- **Clase 02 – Material Extra 2** 
 
 
