@@ -22,7 +22,7 @@ Luego, buscamos los nombres de los otros grupos, tomado solo los primeros 5 cara
 | 3  | BitBros | `bitbr` | 1 | `p`  | `6269746272030170` |
 | 4  | ClickByte | `click` | 2 | `s:` | `636c69636b0402733a` |
 | 5  | Death Net | `death` | 1 | `/`  | `646561746805012f` |
-| 6  | Easter egg del profe(?) | `ferne` | 1 | `/`  | `6665726e6506012f` |
+| 6  | FerNet | `ferne` | 1 | `/`  | `6665726e6506012f` |
 | 8  | Grupo | `grupo` | 1 | `w`  | `677275706f080177` |
 | 9  | LA LA LAN | `la la` | 2 | `w.` | `6c61206c610902772e` |
 | 11 | Los Red(ondos) | `los r` | 2 | `ut` | `6c6f7320720b027574` |
@@ -42,13 +42,6 @@ Luego, buscamos los nombres de los otros grupos, tomado solo los primeros 5 cara
 | 24 | WAN-direction | `wan-d` | 2 | `n6` | `77616e2d6418026e36` |
 | 25 | WireGuardians | `wireg` | 3 | `Lnw`| `776972656719034c6e77` |
 | 32 | Group Not Found :( | `group` | 1 | `w`  | `67726f7570200177` |
-
-**Notas:**
-- Único grupo sin trama en este archivo: **Bitless**.
-- Colisión real en **SEQ=13** entre dos grupos distintos (LAN-gustia y Los_CondIPcionales) — a confirmar con la cátedra.
-- SEQ 7, 10, 26-31 no tienen trama detectada, ni sacando el relleno.
-- El paquete de **Auracast** (grupo propio) es el de SEQ=2, payload `t`.
-- Mensaje reconstruido concatenando por SEQ (con huecos en 7 y 10): `https://ww.utube.com/shorts/dbbe_ln6Lnww`
 
 **Encontramos lo siguiente:**
 - El grupo Bitless no parece tener ninguna trama válida.
