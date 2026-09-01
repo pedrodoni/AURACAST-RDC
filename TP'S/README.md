@@ -19,6 +19,14 @@ Trabajos prácticos de la cursada. Cada TP tiene su propia carpeta con la consig
 - [Ejercicio 4](TP2/Ejercicio_4/Ejercicio4_Resuelto.md)
 - [Ejercicio 5](TP2/Ejercicio_5/Ejercicio5_Resuelto.md)
 
+## 📁 TP3
+
+- [📄 Consigna (RC - TP N3.pdf)](<TP3/RC - TP N3.pdf>)
+- [Ejercicio 1](TP3/Ejercicio_1/Ejercicio1_Resuelto.md)
+- [Ejercicio 2](TP3/Ejercicio_2/Ejercicio2_Resuelto.md)
+- [Ejercicio 3](TP3/Ejercicio_3/Ejercicio3_Resuelto.md)
+- [Ejercicio 4](TP3/Ejercicio_4/Ejercicio4_Resuelto.md)
+
 ## Estructura
 
 ```
@@ -36,6 +44,13 @@ TP2/
 ├── Ejercicio_3/
 ├── Ejercicio_4/
 └── Ejercicio_5/
+
+TP3/
+├── RC - TP N3.pdf              # Consigna del TP N°3
+├── Ejercicio_1/
+├── Ejercicio_2/
+├── Ejercicio_3/
+└── Ejercicio_4/
 ```
 
 Cada ejercicio incluye un archivo `*_Resuelto.md` con el desarrollo teórico/práctico y, cuando corresponde, una carpeta de imágenes con las capturas o diagramas de soporte.
