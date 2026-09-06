@@ -22,7 +22,8 @@ Repositorio del grupo **AURACAST** (equipo *auratech*) para la materia **Redes d
 ```
 TP'S/
 ├── TP1/                             # Ver TP'S/README.md para el detalle por ejercicio
-└── TP2/
+├── TP2/
+└── TP3/
 
 TAREAS/
 └── TAREA02/                        # Ver TAREAS/README.md para el detalle por consigna
