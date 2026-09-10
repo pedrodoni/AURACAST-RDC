@@ -14,7 +14,7 @@ Repositorio del grupo **AURACAST** (equipo *auratech*) para la materia **Redes d
 
 ## Índice
 
-- [📁 TP'S](<TP'S/README.md>) — trabajos prácticos (TP1, ...)
+- [📁 TP'S](<TP'S/README.md>) — trabajos prácticos (TP1 a TP4)
 - [📁 TAREAS](TAREAS/README.md) — tareas de la cursada (Tarea 02, ...)
 
 ## Estructura del repositorio
@@ -23,7 +23,8 @@ Repositorio del grupo **AURACAST** (equipo *auratech*) para la materia **Redes d
 TP'S/
 ├── TP1/                             # Ver TP'S/README.md para el detalle por ejercicio
 ├── TP2/
-└── TP3/
+├── TP3/
+└── TP4/
 
 TAREAS/
 └── TAREA02/                        # Ver TAREAS/README.md para el detalle por consigna

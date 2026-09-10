@@ -27,6 +27,13 @@ Trabajos prácticos de la cursada. Cada TP tiene su propia carpeta con la consig
 - [Ejercicio 3](TP3/Ejercicio_3/Ejercicio3_Resuelto.md)
 - [Ejercicio 4](TP3/Ejercicio_4/Ejercicio4_Resuelto.md)
 
+## 📁 TP4
+
+- [📄 Consigna (RC - TP N4.pdf)](<TP4/RC - TP N4.pdf>)
+- [Ejercicio 1 – Alcance de Redes y Virtualización](TP4/Ejercicio_1/Ejercicio1_Resuelto.md)
+- [Ejercicio 2 – Topología VLAN en Packet Tracer](TP4/Ejercicio_2/Ejercicio2_Resuelto.md)
+- [Ejercicio 3 – LAN a bordo de una aeronave (NAT + ACL)](TP4/Ejercicio_3/Ejercicio3_Resuelto.md)
+
 ## Estructura
 
 ```
@@ -51,6 +58,12 @@ TP3/
 ├── Ejercicio_2/
 ├── Ejercicio_3/
 └── Ejercicio_4/
+
+TP4/
+├── RC - TP N4.pdf              # Consigna del TP N°4
+├── Ejercicio_1/                # Alcance de Redes y Virtualización
+├── Ejercicio_2/                # Topología VLAN en Packet Tracer
+└── Ejercicio_3/                # LAN a bordo de una aeronave (NAT + ACL)
 ```
 
 Cada ejercicio incluye un archivo `*_Resuelto.md` con el desarrollo teórico/práctico y, cuando corresponde, una carpeta de imágenes con las capturas o diagramas de soporte.
