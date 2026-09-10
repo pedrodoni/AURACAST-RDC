@@ -21,9 +21,9 @@ Podemos ver que las direcciones IP son, Source Address 192.168.1.4 que pertenece
 
 **Consigna:**  Comparar las direcciones MAC y las direcciones IP encontradas ¿Representan lo mismo?
 
-No representan lo mismo. El direccionamiento MAC operan en capa 2 (Enlace de datos) ,es único y estático para cada placa de red (hardware) que sirve para la entrega del paquete dentro del mismo segmento de red.
+No representan lo mismo. El direccionamiento MAC opera en capa 2 (Enlace de datos), es único y estático para cada placa de red (hardware) y sirve para la entrega del paquete dentro del mismo segmento de red.
 
-Mientras que el direccionamiento ip opera en capa 3 (Red), es un direccionamiento logico que sirve para identificar nodos finales y permitir el enrutamiento extremo a extremo a traves de múltiples redes distintas.
+Mientras que el direccionamiento IP opera en capa 3 (Red), es un direccionamiento lógico que sirve para identificar nodos finales y permitir el enrutamiento extremo a extremo a través de múltiples redes distintas.
 
 
 
@@ -31,4 +31,4 @@ Mientras que el direccionamiento ip opera en capa 3 (Red), es un direccionamient
 
 **Consigna:**  Observar el campo EtherType. ¿Qué protocolo está encapsulado dentro de la trama analizada?
 
-Al observar el campo EtherType, el protocolo que se encuentra encapsulado directamente en la trama es IPv4 y los datos transportados dentro de ese paquete IP utilizan a nivel capa de enlace (capa 2 el protocolo TCP.
+Al observar el campo EtherType, el protocolo que se encuentra encapsulado directamente en la trama es IPv4 y los datos transportados dentro de ese paquete IP utilizan el protocolo TCP.
