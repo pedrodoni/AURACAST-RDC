@@ -52,8 +52,48 @@ La difracción es un fenómeno asociado al comportamiento físico de las ondas e
 ### 4.1
 Supóngase que unos datos se almacenan en disquetes de 1,4 Mbytes que pesan 30 g cada uno y que una compañía aérea transporta 10⁴ kg de disquetes a una velocidad de 1.000 km/h sobre una distancia de 5.000 km. ¿Cuál es la velocidad de transmisión en bits por segundo de este sistema?
 
+**Respuesta**
+
+Carga total en gramos:
+
+$$10^4\ \text{kg} = 10^7\ \text{g}$$
+
+Cantidad de disquetes transportados:
+
+$$N = \frac{10^7\ \text{g}}{30\ \text{g/disquete}} \approx 333.333\ \text{disquetes}$$
+
+Volumen total de datos, directo en bits:
+
+$$B_{total} = 333.333 \times 11{,}2\times10^{6}\ \text{bits} \approx 3{,}7333\times10^{12}\ \text{bits}$$
+
+Tiempo de vuelo:
+
+$$t = \frac{5.000\ \text{km}}{1.000\ \text{km/h}} = 5\ \text{h} = 18.000\ \text{s}$$
+
+Velocidad de transmisión:
+
+$$R = \frac{3{,}7333\times10^{12}\ \text{bits}}{18.000\ \text{s}} \approx 207.407.407\ \text{bps} \approx \mathbf{207{,}41\ Mbps}$$
+
 ### 4.2
 Sea una línea telefónica caracterizada por una pérdida de 20 dB. La potencia de la señal a la entrada es de 0,5 W y el nivel del ruido a la salida es de 4,5 μW. Calcule la relación señal/ruido para la línea en dB.
+
+**Respuesta**
+
+Potencia de entrada en dBW:
+
+$$P_{in}(\text{dBW}) = 10\log_{10}(0{,}5) = -3{,}01\ \text{dBW}$$
+
+Potencia de salida (resta directa de la pérdida en dB):
+
+$$P_{out}(\text{dBW}) = -3{,}01 - 20 = -23{,}01\ \text{dBW} \;\;(\approx 5\ \text{mW})$$
+
+Ruido en dBW:
+
+$$P_{ruido}(\text{dBW}) = 10\log_{10}(4{,}5\times10^{-6}) = -53{,}47\ \text{dBW}$$
+
+Relación señal/ruido:
+
+$$SNR_{dB} = -23{,}01 - (-53{,}47) = \mathbf{30{,}46\ dB}$$
 
 ### 4.3
 Dada una fuente de 100 W, determine la máxima longitud alcanzable en los siguientes medios de transmisión, si la potencia a recibir es 1 vatio:
@@ -64,8 +104,33 @@ c) Un cable coaxial de 9,5 mm a 1 MHz.
 d) Un cable coaxial de 9,5 mm a 25 MHz.
 e) Una fibra óptica trabajando a su frecuencia óptima.
 
+**Respuesta**
+
+Pérdida máxima admisible (única para los 5 casos):
+
+$$L_{max} = 10\log_{10}\!\left(\frac{P_{tx}}{P_{rx}}\right) = 10\log_{10}\!\left(\frac{100}{1}\right) = 20\ \text{dB}$$
+
+Distancia por medio:
+
+$$d_{max} = \frac{L_{max}}{\alpha}$$
+
+- a) Par trenzado 0,5 mm (24 AWG) @ 300 kHz — α ≈ 18 dB/km:
+  $$d = \frac{20}{18} \approx \mathbf{1{,}11\ km}$$
+- b) Par trenzado 0,5 mm (24 AWG) @ 1 MHz — α ≈ 29 dB/km:
+  $$d = \frac{20}{29} \approx \mathbf{0{,}69\ km}$$
+- c) Coaxial 9,5 mm @ 1 MHz — α ≈ 2,5 dB/km:
+  $$d = \frac{20}{2{,}5} = \mathbf{8\ km}$$
+- d) Coaxial 9,5 mm @ 25 MHz — α ≈ 11 dB/km:
+  $$d = \frac{20}{11} \approx \mathbf{1{,}82\ km}$$
+- e) Fibra óptica — α ≈ 0,2 a 0,5 dB/km:
+  $$d = \frac{20}{0{,}5}\ \text{a}\ \frac{20}{0{,}2} \Rightarrow \mathbf{40\ km\ a\ 100\ km}$$
+
 ### 4.4
 El cable coaxial es un sistema de transmisión con dos conductores. ¿Qué ventaja tiene conectar la malla exterior a tierra?
+
+**Respuesta**
+
+Al aterrizar la malla exterior, esta actúa como pantalla electromagnética: cualquier interferencia externa que la alcance (campos radiados, acoplamiento de cables vecinos) se deriva a tierra en lugar de inducirse sobre el conductor central que porta la señal. El resultado es una reducción sustancial del ruido acoplado y del crosstalk, junto con una referencia de potencial estable y protección eléctrica adicional para el sistema.
 
 ### 4.5
 Demuestre que duplicando la frecuencia de transmisión o duplicando la distancia entre las antenas de transmisión y recepción, la potencia recibida se atenúa en 6 dB.
