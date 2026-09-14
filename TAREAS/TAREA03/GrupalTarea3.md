@@ -188,8 +188,51 @@ c) Si la antena receptora se sitúa a 24 km de la antena transmisora en el espac
 ### 4.15
 En la Sección 4.3 se afirma que si no hay obstáculos intermedios, la trayectoria visual óptica se puede expresar como d = 3,57√h, donde d es la distancia entre la antena y el horizonte, en kilómetros, y h es la altura de la antena, en metros. Teniendo en cuenta que el radio de la Tierra es 6.370 km, obtenga la expresión anterior. Sugerencia: supóngase que la antena es perpendicular a la superficie terrestre y nótese que la recta que une el punto más alto de la antena y el horizonte es la tangente a la superficie terrestre en el horizonte. Para visualizar más claramente el problema, dibuje un gráfico con la antena, la trayectoria visual y el radio de la Tierra.
 
-### 4.16
+
+### 4.16 
 Calcule la altura de una antena de una emisora de TV que sea capaz de alcanzar clientes alejados a 80 km.
 
-### 4.17
-Suponga que un rayo de luz visible pasa desde la atmósfera hasta el agua formando un ángulo con el horizonte de 30°. ¿Cuál es el ángulo del rayo en el agua? Nota: en condiciones atmosféricas normales en la superficie terrestre, un valor razonable del índice de refracción es 1,0003. El valor típico del índice de refracción en el agua es 4/3.
+**Respuesta**
+
+En transmisiones de radio y televisión, se debe usar la fórmula del horizonte de radio (línea de visión efectiva), la cual tiene en cuenta la curvatura de la Tierra y la refracción atmosférica: 
+$$ d = 3,57\sqrt{Kh} $$
+
+*   **$d$** (distancia máxima) = $80\text{ km}$.
+*   **$K$** (factor de ajuste de refracción) = $4/3 \approx 1,333$ (valor estándar sugerido en el texto).
+*   **$h$** = altura de la antena en metros (lo que buscamos).
+
+1. Sustituimos los valores conocidos en la fórmula:
+   $$ 80 = 3,57 \cdot \sqrt{1,333 \cdot h} $$
+2. Pasamos el $3,57$ dividiendo para aislar la raíz cuadrada:
+   $$ \sqrt{1,333 \cdot h} = \frac{80}{3,57} \approx 22,41 $$
+3. Elevamos ambos lados al cuadrado para eliminar la raíz:
+   $$ 1,333 \cdot h \approx (22,41)^2 \approx 502,16 $$
+4. Despejamos la altura ($h$):
+   $$ h = \frac{502,16}{1,333} \approx 376,7 $$
+
+Para alcanzar una cobertura de 80 km, la antena de televisión debe tener una altura aproximada de **376,7 metros**.
+
+### 4.17 
+Suponga que un rayo de luz visible pasa desde la atmósfera hasta el agua formando un ángulo con el horizonte de 30°. ¿Cuál es el ángulo del rayo en el agua? Nota: en condiciones atmosféricas normales en la superficie terrestre, un valor razonable del índice de refracción es 1,0003. El valor típico del índice de refracción en el agua es 4 3.
+
+**Respuesta**
+
+Se utiliza la relación de los índices de refracción (conocida como la Ley de Snell), que establece que el cociente de los índices es inversamente proporcional al cociente de los senos de los ángulos respecto a la "normal" (la línea perpendicular a la superficie):
+$$ n_1 \cdot \sin(\theta_1) = n_2 \cdot \sin(\theta_2) $$
+
+*   **$n_1$** (índice de refracción de la atmósfera) = $1,0003$.
+*   **$n_2$** (índice de refracción del agua) = $4/3 \approx 1,3333$.
+*   **$\theta_1$** (ángulo de incidencia): El texto dice que el rayo forma 30° con el horizonte. Como el ángulo debe medirse desde la perpendicular (la normal), restamos: $90^\circ - 30^\circ = 60^\circ$.
+
+1. Sustituimos los valores en la ecuación:
+   $$ 1,0003 \cdot \sin(60^\circ) = 1,3333 \cdot \sin(\theta_2) $$
+2. Calculamos el seno de 60° (que es $\approx 0,8660$) y multiplicamos:
+   $$ 1,0003 \cdot 0,8660 = 1,3333 \cdot \sin(\theta_2) $$
+   $$ 0,8663 = 1,3333 \cdot \sin(\theta_2) $$
+3. Despejamos el $\sin(\theta_2)$:
+   $$ \sin(\theta_2) = \frac{0,8663}{1,3333} \approx 0,6497 $$
+4. Aplicamos la función arcoseno ($\arcsin$) para encontrar el ángulo:
+   $$ \theta_2 = \arcsin(0,6497) \approx 40,52^\circ $$
+
+El ángulo del rayo de luz dentro del agua es de **40,52°** medido con respecto a la línea vertical (la normal). *(Si se quisiera saber el ángulo respecto a la superficie del agua, sería $90^\circ - 40,52^\circ = 49,48^\circ$).*
+
