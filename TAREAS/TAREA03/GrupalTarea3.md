@@ -178,6 +178,27 @@ b) Si la potencia del transmisor se aplica a una antena con ganancia unidad, usa
 c) Repita el apartado (b) para una distancia de 10 km.
 d) Repita (c) pero suponiendo una ganancia para la antena de recepción de 2.
 
+**Respuesta**
+
+a) 
+En dBW: $10 \log_{10}(50) = \mathbf{16{,}99\ dBW}$
+En dBm: $10 \log_{10}(50000) = \mathbf{46{,}99\ dBm}$
+
+b)
+La longitud de onda es $\lambda = \frac{3 \cdot 10^8}{900 \cdot 10^6} = \frac{1}{3}\ \text{m}$.
+Pérdida en el espacio libre a 100 m:
+$L = 20 \log_{10}\left(\frac{4\pi \cdot 100}{1/3}\right) \approx 71{,}53\ \text{dB}$
+Potencia recibida: $46{,}99 - 71{,}53 = \mathbf{-24{,}54\ dBm}$
+
+c)
+A 10 km (10.000 m), la distancia es 100 veces mayor, por lo que la pérdida aumenta en $20 \log_{10}(100) = 40\ \text{dB}$.
+$L = 71{,}53 + 40 = 111{,}53\ \text{dB}$
+Nueva potencia recibida: $46{,}99 - 111{,}53 = \mathbf{-64{,}54\ dBm}$
+
+d)
+Una ganancia de 2 equivale a $10 \log_{10}(2) \approx 3\ \text{dB}$. Se suma al resultado anterior:
+$P_r = -64{,}54 + 3 = \mathbf{-61{,}54\ dBm}$
+
 ### 4.14
 Un transmisor de microondas tiene una salida de 0,1 W a 2 GHz. Suponga que este transmisor se utiliza en un sistema de comunicación de microondas en el que las antenas transmisora y receptora son parábolas, cada una con un diámetro igual a 1,2 m.
 
@@ -185,9 +206,48 @@ a) ¿Cuál es la ganancia de cada antena en decibelios?
 b) Teniendo en cuenta la ganancia de la antena para la señal transmitida, ¿cuál es la potencia efectiva radiada?
 c) Si la antena receptora se sitúa a 24 km de la antena transmisora en el espacio libre, determine la potencia de la señal a la salida de la antena receptora en dBm.
 
+**Respuesta**
+
+a)
+Para un radio $r = 0{,}6\ \text{m}$, el área es $A = \pi \cdot 0{,}6^2 \approx 1{,}131\ \text{m}^2$.
+La longitud de onda es $\lambda = \frac{3 \cdot 10^8}{2 \cdot 10^9} = 0{,}15\ \text{m}$.
+Usando la fórmula $G = \frac{7A}{\lambda^2}$:
+$G = \frac{7 \cdot 1{,}131}{0{,}15^2} \approx 351{,}87$
+En decibelios: $10 \log_{10}(351{,}87) = \mathbf{25{,}46\ dB}$
+
+b)
+$P_t = 0{,}1\ \text{W}$, equivalente a $20\ \text{dBm}$.
+$\text{EIRP} = P_t + G_t = 20 + 25{,}46 = \mathbf{45{,}46\ dBm}$
+
+c)
+Para $d = 24.000\ \text{m}$, la pérdida en el espacio libre es:
+$L = 20 \log_{10}\left(\frac{4\pi \cdot 24000}{0{,}15}\right) \approx 126{,}07\ \text{dB}$
+Potencia en el receptor:
+$P_r = \text{EIRP} - L + G_r = 45{,}46 - 126{,}07 + 25{,}46 = \mathbf{-55{,}15\ dBm}$
+
 ### 4.15
 En la Sección 4.3 se afirma que si no hay obstáculos intermedios, la trayectoria visual óptica se puede expresar como d = 3,57√h, donde d es la distancia entre la antena y el horizonte, en kilómetros, y h es la altura de la antena, en metros. Teniendo en cuenta que el radio de la Tierra es 6.370 km, obtenga la expresión anterior. Sugerencia: supóngase que la antena es perpendicular a la superficie terrestre y nótese que la recta que une el punto más alto de la antena y el horizonte es la tangente a la superficie terrestre en el horizonte. Para visualizar más claramente el problema, dibuje un gráfico con la antena, la trayectoria visual y el radio de la Tierra.
 
+**Respuesta**
+
+Se plantea un triángulo rectángulo formado por el centro de la Tierra ($C$), el horizonte ($H$) y la punta de la antena ($A$):
+- Cateto 1: $R = 6370\ \text{km}$
+- Cateto 2: $d$ (distancia al horizonte)
+- Hipotenusa: $R + h$ (radio más altura de la antena)
+
+Por el teorema de Pitágoras:
+$(R + h)^2 = R^2 + d^2$
+$R^2 + 2Rh + h^2 = R^2 + d^2$
+$d^2 = 2Rh + h^2$
+
+Dado que $h$ (en metros) es un valor insignificante frente a $R$ (6.370.000 m), el término $h^2$ se puede despreciar:
+$d^2 \approx 2Rh$
+
+Reemplazando $R = 6370\ \text{km}$ y convirtiendo $h$ a kilómetros ($h/1000$):
+$d^2 = 2 \cdot 6370 \cdot (h / 1000) = 12{,}74 \cdot h$
+Aplicando la raíz cuadrada en ambos términos:
+$d = \sqrt{12{,}74} \cdot \sqrt{h}$
+$d \approx \mathbf{3{,}57 \sqrt{h}}$
 
 ### 4.16 
 Calcule la altura de una antena de una emisora de TV que sea capaz de alcanzar clientes alejados a 80 km.
