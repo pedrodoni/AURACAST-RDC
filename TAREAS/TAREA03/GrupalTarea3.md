@@ -333,9 +333,65 @@ En la Sección 4.2 se ha establecido que si una fuente de energía electromagné
 a) Demuestre primero que tan β = p/y₁. Sugerencia: recuérdese que la pendiente de una recta es igual a la tangente del ángulo que forma esa recta con el eje x positivo, y que la pendiente de una recta tangente a una curva en un punto dado es igual a la derivada de la curva en ese punto.
 b) Ahora demuéstrese que tan α = p/y₁, lo que demostraría que α = β. Sugerencia: recuérdese la fórmula de la tangente de la diferencia entre dos ángulos α₁ y α₂: tan(α₂ − α₁) = (tan α₂ − tan α₁)/(1 + tan α₂ · tan α₁).
 
+**Respuesta**
+
+Para facilitar la demostración geométrica, ubicamos la parábola con vértice en el origen y abierta hacia la derecha, cuya ecuación estándar es $y^2 = 2px$ (esto sitúa su foco en $F(p/2, 0)$).
+
+**a) Demostrar que $\tan \beta = p/y_1$:**
+La pendiente de la recta tangente $M$ a la curva en el punto $P(x_1, y_1)$ se obtiene derivando la ecuación de la parábola respecto a $x$:
+$$2y \cdot y' = 2p \implies y' = \frac{p}{y}$$
+Evaluando en $P(x_1, y_1)$, la pendiente es $m = \frac{p}{y_1}$.
+Como la recta $L$ es paralela al eje $x$ (horizontal, con pendiente 0), el ángulo $\beta$ entre $L$ y $M$ tiene como tangente a la propia pendiente de $M$. Por lo tanto:
+$$\tan \beta = \frac{p}{y_1}$$
+
+**b) Demostrar que $\tan \alpha = p/y_1$:**
+El ángulo $\alpha$ es el ángulo entre la recta $PF$ (que pasa por $P(x_1, y_1)$ y el foco $F(p/2, 0)$) y la recta tangente $M$.
+La pendiente de $PF$ es:
+$$m_{PF} = \frac{y_1 - 0}{x_1 - p/2}$$
+Como $P$ pertenece a la parábola, sabemos que $x_1 = \frac{y_1^2}{2p}$, entonces sustituimos:
+$$m_{PF} = \frac{y_1}{\frac{y_1^2}{2p} - \frac{p}{2}} = \frac{2py_1}{y_1^2 - p^2}$$
+
+Llamemos $\gamma$ al ángulo que forma $PF$ con el eje $x$, entonces $\tan \gamma = m_{PF}$. Sabemos que $\alpha = \gamma - \beta$. Aplicando la fórmula de la tangente de la diferencia sugerida:
+$$\tan \alpha = \frac{\tan \gamma - \tan \beta}{1 + \tan \gamma \cdot \tan \beta}$$
+Reemplazando los valores hallados:
+$$\tan \alpha = \frac{\frac{2py_1}{y_1^2 - p^2} - \frac{p}{y_1}}{1 + \left(\frac{2py_1}{y_1^2 - p^2}\right) \left(\frac{p}{y_1}\right)}$$
+
+Trabajando el numerador:
+$$\frac{2py_1^2 - p(y_1^2 - p^2)}{y_1(y_1^2 - p^2)} = \frac{p(y_1^2 + p^2)}{y_1(y_1^2 - p^2)}$$
+
+Trabajando el denominador:
+$$1 + \frac{2p^2}{y_1^2 - p^2} = \frac{y_1^2 - p^2 + 2p^2}{y_1^2 - p^2} = \frac{y_1^2 + p^2}{y_1^2 - p^2}$$
+
+Dividiendo el numerador por el denominador, los términos $(y_1^2 + p^2)$ y $(y_1^2 - p^2)$ se simplifican completamente, quedando:
+$$\tan \alpha = \frac{p}{y_1}$$
+
+Dado que $\tan \alpha = \tan \beta = \frac{p}{y_1}$, entonces se comprueba que **$\alpha = \beta$**. Esto demuestra que la onda reflejada sigue una trayectoria completamente paralela al eje $x$.
+
 ### 4.12
 
 A menudo es más conveniente expresar las distancias en km en lugar de en m y las frecuencias en MHz en lugar de Hz. Rescriba la Ecuación (4.1) usando estas unidades.
+
+**Respuesta**
+
+La ecuación de pérdida en el espacio libre expresada en decibelios (dB), donde la distancia ($d$) se mide en metros y la frecuencia ($f$) en hercios, es la que se utilizó en el ejercicio 4.5:
+$$L_{dB} = 20 \log_{10}(f) + 20 \log_{10}(d) - 147,56$$
+
+Para expresar $d$ en kilómetros ($d_{km}$) y $f$ en megahercios ($f_{MHz}$), hacemos las conversiones correspondientes:
+- $f = f_{MHz} \times 10^6$
+- $d = d_{km} \times 10^3$
+
+Sustituyendo esto en la ecuación original:
+$$L_{dB} = 20 \log_{10}(f_{MHz} \cdot 10^6) + 20 \log_{10}(d_{km} \cdot 10^3) - 147,56$$
+
+Aplicando la propiedad de la suma de los logaritmos ($\log(A \cdot B) = \log(A) + \log(B)$):
+$$L_{dB} = 20 \log_{10}(f_{MHz}) + 20 \log_{10}(10^6) + 20 \log_{10}(d_{km}) + 20 \log_{10}(10^3) - 147,56$$
+
+Calculamos los logaritmos de base 10 de las potencias ($20 \cdot 6 = 120$ y $20 \cdot 3 = 60$):
+$$L_{dB} = 20 \log_{10}(f_{MHz}) + 120 + 20 \log_{10}(d_{km}) + 60 - 147,56$$
+
+Agrupamos y sumamos las constantes numéricas ($120 + 60 - 147,56 = 32,44$):
+$$L_{dB} = 20 \log_{10}(f_{MHz}) + 20 \log_{10}(d_{km}) + 32,44$$
+*(Esta es la conocida fórmula práctica para enlaces en espacio libre en telecomunicaciones).*
 
 ### 4.13
 
