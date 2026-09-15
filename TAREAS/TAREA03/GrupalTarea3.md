@@ -289,17 +289,42 @@ La persona recibiría una frecuencia de 60 GHz.
 
 Suponga una comunicación entre dos satélites que cumple la ley del espacio libre. Suponga que la señal es muy débil. Se disponen de dos alternativas de diseño: una consiste en utilizar una frecuencia igual al doble de la frecuencia actual y la otra consiste en duplicar el área efectiva de las dos antenas. Manteniendo todos los demás parámetros inalterados, ¿se conseguirá la misma potencia recibida? o, en caso contrario, ¿cuál de las dos alternativas proporcionaría una potencia recibida superior? ¿Cuál sería el incremento de potencia recibida en el mejor de los casos?
 
+**Respuesta**
+
+Utilizando la ecuación de Friis para la potencia recibida en el espacio libre con áreas efectivas:
+
+$$P_r = P_t \frac{A_t A_r f^2}{c^2 d^2}$$
+
+Analizando las dos alternativas:
+
+1. **Duplicar la frecuencia ($2f$):**
+
+   $$P_r' = P_t \frac{A_t A_r (2f)^2}{c^2 d^2} = 4 \cdot P_t \frac{A_t A_r f^2}{c^2 d^2} = 4 \cdot P_r$$
+
+2. **Duplicar el área efectiva de *ambas* antenas ($2A_t$ y $2A_r$):**
+
+   $$P_r'' = P_t \frac{(2A_t) (2A_r) f^2}{c^2 d^2} = 4 \cdot P_t \frac{A_t A_r f^2}{c^2 d^2} = 4 \cdot P_r$$
+
+**Conclusión:** Con ambas alternativas se conseguirá **exactamente la misma potencia recibida**. En ambos casos, la potencia original se multiplica por 4, lo que equivale a un incremento en la potencia recibida de **6 dB** aproximadamente ($10 \log_{10}(4) \approx 6,02\text{ dB}$).
+
 ### 4.10
 
 En la transmisión de radio en el espacio libre, la potencia de la señal se reduce proporcionalmente al cuadrado de la distancia recorrida desde la fuente, mientras que en una transmisión en un cable, la atenuación es una cantidad fija en dB por kilómetro. En la siguiente tabla se muestra, en dB, la reducción relativa a una referencia dada para la transmisión en el espacio libre y en un cable uniforme. Rellene las celdas que faltan para completar la tabla.
 
+**Respuesta**
+
+- Para el **Cable**: La atenuación aumenta de forma lineal con la distancia. Si en 1 km pierde -3 dB, la tasa de pérdida constante es de 3 dB/km. Por tanto, para distancias de 2, 4, 8 y 16 km se multiplica esa tasa por la distancia ($d \cdot -3$).
+- Para el **Radio**: La pérdida en el espacio libre es proporcional al cuadrado de la distancia (como se comprobó en el Ejercicio 4.5). Cada vez que la distancia se duplica, la pérdida aumenta en aproximadamente 6 dB (se le suman -6 dB al valor anterior, volviéndolo más negativo).
+
+Tabla completa:
+
 | Longitud (km) | Radio (dB) | Cable (dB) |
 | ------------- | ---------- | ---------- |
 | 1             | -6         | -3         |
-| 2             |            |            |
-| 4             |            |            |
-| 8             |            |            |
-| 16            |            |            |
+| 2             | **-12**    | **-6**     |
+| 4             | **-18**    | **-12**    |
+| 8             | **-24**    | **-24**    |
+| 16            | **-30**    | **-48**    |
 
 ### 4.11
 
