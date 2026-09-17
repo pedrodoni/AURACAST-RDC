@@ -181,10 +181,55 @@ SW-1(config-if)# end
 
 > l) Verificar el estado de la VLAN utilizando `show vlan brief` y el estado de las interfaces utilizando `show ip interface brief`. Colocar los output en el informe e interpretar.
 
+A continuación, verificamos el estado general del switch (mostrado desde SW-2) luego de realizar las configuraciones de los incisos posteriores:
+
+**Estado de las VLANs:**
+![Salida show vlan brief SW-2](images/showVlanbriefSW2.L.png)
+
+*Interpretación:* Aquí se observa que el puerto `Fa0/18` (donde está conectada la PC-B) ya fue removido de la VLAN 1 y se encuentra correctamente asignado a la VLAN 10 (Laboratorio).
+
+**Estado de las interfaces:**
+![Salida show ip interface brief SW-2](images/showIPinterfaceSW2.png)
+
+*Interpretación:* Podemos corroborar que los puertos no utilizados se encuentran apagados (`administratively down`) como se configuró en el inciso E. Además, notamos que la interfaz virtual `Vlan1` ya no posee IP, mientras que la interfaz `Vlan99` tiene asignada la dirección IP `192.168.1.12` correspondiente a la administración.
+
 ## Inciso m
 
 > m) Asignar la PC-B a la VLAN Laboratorio en el sw2. Repetir el inciso k) pero para el sw2.
 
+Aplicamos la configuración en SW-2 para ubicar la computadora en la VLAN correspondiente y asegurar el acceso de administración en la VLAN 99:
+
+**Configuración en SW-2:**
+```text
+SW-2(config)# interface f0/18
+SW-2(config-if)# switchport mode access
+SW-2(config-if)# switchport access vlan 10
+SW-2(config-if)# exit
+
+SW-2(config)# interface vlan 1
+SW-2(config-if)# no ip address
+SW-2(config-if)# interface vlan 99
+SW-2(config-if)# ip address 192.168.1.12 255.255.255.0
+SW-2(config-if)# exit
+```
+
 ## Inciso n
 
 > n) Verificar la conectividad entre PC-A y PC-B utilizando pings. Verificar conectividad entre sw1 y sw2 utilizando pings. Interpretar los resultados.
+
+Tras configurar las VLANs, repetimos la prueba de comunicación.
+
+**Ping entre PC-A y PC-B:**
+![Ping fallido entre PC-A y PC-B](images/PINGPCAtoPCB.N.png)
+
+**Ping entre SW-1 y SW-2:**
+![Ping fallido entre SW-1 y SW-2](images/PINGSW1toSW2.N.png)
+
+**Interpretación de los resultados:**
+Como se puede observar en las capturas, ambos pings ahora **fallan** ("Request timed out" y "Success rate is 0 percent"). 
+
+Esto se debe a la segmentación lógica impuesta por las VLANs. Actualmente:
+1. Las PCs están en la **VLAN 10**.
+2. Las IPs de administración de los switches están en la **VLAN 99**.
+
+Sin embargo, el cable que interconecta a los switches `SW-1` y `SW-2` sigue configurado como un puerto de acceso en la **VLAN 1** (por defecto). Como no hemos configurado ese enlace como un puerto **Trunk** (troncal), el mismo no permite el paso del tráfico etiquetado perteneciente a la VLAN 10 ni a la VLAN 99. En consecuencia, el tráfico queda aislado localmente en cada switch y no llega al otro extremo.
