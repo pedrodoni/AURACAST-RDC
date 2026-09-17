@@ -9,13 +9,48 @@
 > | PC-A   | NIC       | 192.168.10.3  | 255.255.255.0 | 192.168.10.1     |
 > | PC-B   | NIC       | 192.168.10.4  | 255.255.255.0 | 192.168.10.1     |
 
+![Topología de red](images/CISCO.png)
+
 ## Inciso a
 
 > a) Desde cada computadora, ingresar a la terminal y configurar los switch. Nombrar a los mismos sw1 y sw2 respectivamente.
 
+Para realizar esta configuración, ingresamos a la terminal desde cada PC (conectadas por consola a los switches) y ejecutamos los siguientes comandos para cambiar el nombre de los dispositivos a `SW-1` y `SW-2`.
+
+**Para SW-1 (desde PC-A):**
+```text
+Switch> enable
+Switch# configure terminal
+Switch(config)# hostname SW-1
+SW-1(config)#
+```
+
+**Para SW-2 (desde PC-B):**
+```text
+Switch> enable
+Switch# configure terminal
+Switch(config)# hostname SW-2
+SW-2(config)#
+```
+
 ## Inciso b
 
 > b) Asignar contraseñas privilegiadas, de consola y vty.
+
+Asignamos las contraseñas requeridas para proteger el acceso privilegiado, el acceso por consola y el acceso remoto (VTY). Este procedimiento se repite en ambos switches.
+
+**Configuración en SW-1 y SW-2:**
+```text
+SW-1(config)# enable secret class
+SW-1(config)# line console 0
+SW-1(config-line)# password cisco
+SW-1(config-line)# login
+SW-1(config-line)# exit
+SW-1(config)# line vty 0 15
+SW-1(config-line)# password cisco
+SW-1(config-line)# login
+SW-1(config-line)# exit
+```
 
 ## Inciso c
 
