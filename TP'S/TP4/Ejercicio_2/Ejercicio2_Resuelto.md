@@ -186,12 +186,12 @@ A continuación, verificamos el estado general del switch (mostrado desde SW-2) 
 **Estado de las VLANs:**
 ![Salida show vlan brief SW-2](images/showVlanbriefSW2.L.png)
 
-*Interpretación:* Aquí se observa que el puerto `Fa0/18` (donde está conectada la PC-B) ya fue removido de la VLAN 1 y se encuentra correctamente asignado a la VLAN 10 (Laboratorio).
+Aquí se observa que el puerto `Fa0/18` (donde está conectada la PC-B) ya fue removido de la VLAN 1 y se encuentra correctamente asignado a la VLAN 10 (Laboratorio).
 
 **Estado de las interfaces:**
 ![Salida show ip interface brief SW-2](images/showIPinterfaceSW2.png)
 
-*Interpretación:* Podemos corroborar que los puertos no utilizados se encuentran apagados (`administratively down`) como se configuró en el inciso E. Además, notamos que la interfaz virtual `Vlan1` ya no posee IP, mientras que la interfaz `Vlan99` tiene asignada la dirección IP `192.168.1.12` correspondiente a la administración.
+Podemos corroborar que los puertos no utilizados se encuentran apagados (`administratively down`) como se configuró en el inciso E. Además, notamos que la interfaz virtual `Vlan1` ya no posee IP, mientras que la interfaz `Vlan99` tiene asignada la dirección IP `192.168.1.12` correspondiente a la administración.
 
 ## Inciso m
 
@@ -225,7 +225,7 @@ Tras configurar las VLANs, repetimos la prueba de comunicación.
 **Ping entre SW-1 y SW-2:**
 ![Ping fallido entre SW-1 y SW-2](images/PINGSW1toSW2.N.png)
 
-**Interpretación de los resultados:**
+**Resultados:**
 Como se puede observar en las capturas, ambos pings ahora **fallan** ("Request timed out" y "Success rate is 0 percent"). 
 
 Esto se debe a la segmentación lógica impuesta por las VLANs. Actualmente:
