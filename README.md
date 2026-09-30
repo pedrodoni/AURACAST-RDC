@@ -14,7 +14,7 @@ Repositorio del grupo **AURACAST** (equipo *auratech*) para la materia **Redes d
 
 ## Índice
 
-- [📁 TP'S](<TP'S/README.md>) — trabajos prácticos (TP1 a TP4)
+- [📁 TP&#39;S](TP'S/README.md) — trabajos prácticos (TP1 a TP4)
 - [📁 TAREAS](TAREAS/README.md) — tareas de la cursada (Tarea 02, ...)
 
 ## Estructura del repositorio
@@ -24,12 +24,18 @@ TP'S/
 ├── TP1/                             # Ver TP'S/README.md para el detalle por ejercicio
 ├── TP2/
 ├── TP3/
-└── TP4/
+├── TP4/
+└── TP5/
+
 
 TAREAS/
-└── TAREA02/                        # Ver TAREAS/README.md para el detalle por consigna
+└── TAREA02/
+├── TAREA02/
+├── TAREA03/
+├── TAREA04/
+# Ver TAREAS/README.md para el detalle por consigna
 ```
 
 ## Cómo navegar el repo
 
-Entrá al [README de TP'S](<TP'S/README.md>) o al [README de TAREAS](TAREAS/README.md) según lo que quieras revisar; cada uno tiene su propio índice con links directos a los archivos y, dentro de las tareas, a cada consigna.
+Entrá al [README de TP&#39;S](TP'S/README.md) o al [README de TAREAS](TAREAS/README.md) según lo que quieras revisar; cada uno tiene su propio índice con links directos a los archivos y, dentro de las tareas, a cada consigna.
