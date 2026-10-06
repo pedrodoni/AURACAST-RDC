@@ -64,22 +64,23 @@ Si comparáramos un ping hecho desde Windows con uno de Linux, veríamos que **e
 
 #### d) ¿Qué valor de TTL tiene el Echo Request que ustedes enviaron? ¿Y el Reply que llegó de 8.8.8.8? ¿Por qué no son iguales? (Pista: investiguen qué hace un router con el TTL.) 
 
-En nuestra captura, el **Echo Request** tiene un valor de **TTL = 63**, mientras que el **Echo Reply** que llegó desde `8.8.8.8` tiene un valor de **TTL = 118**.
+En la captura, el **Echo Request** tiene un valor de **TTL = 63**, mientras que el **Echo Reply** que llegó desde `8.8.8.8` tiene un valor de **TTL = 118**.
 
 No son iguales debido a la función fundamental que cumple el TTL (Time to Live) en las redes IP:
 Cada vez que un paquete pasa a través de un router (lo que se conoce como un "salto"), ese router le resta 1 al valor del TTL antes de reenviarlo al siguiente destino. Si el TTL llega a 0, el paquete se descarta (esto evita que los paquetes se queden dando vueltas infinitamente en la red si hay bucles de enrutamiento).
 
 - **El Echo Request (TTL 63):** Al ejecutar el comando ping desde una máquina virtual Linux, el sistema operativo generó el paquete con su TTL inicial por defecto (que en Linux es 64). Como la captura de Wireshark se hizo desde Windows (el sistema anfitrión), el paquete tuvo que pasar por el "router" interno (NAT) que conecta la máquina virtual con Windows, el cual le restó 1. Por eso, al ser capturado en Windows, ya figura con TTL 63.
-- **El Echo Reply (TTL 118):** El servidor de Google (`8.8.8.8`) probablemente respondió usando otro sistema operativo cuyo TTL inicial es distinto (suponiendo que es 128 o tal vez 255). Durante el largo viaje de vuelta desde los servidores de Google hasta nuestra computadora, el paquete atravesó varios routers a través de Internet, y cada uno le descontó 1 a su TTL. Al llegar a nuestra computadora con un valor de 118, nos indica que el paquete de respuesta dio varios saltos en la red hasta alcanzarnos (por ejemplo, si el inicial era 128, pasó por 10 routers).
+- **El Echo Reply (TTL 118):** El servidor de Google (`8.8.8.8`) respondió usando otro sistema operativo cuyo TTL inicial es distinto (suponiendo que es 128 o tal vez 255). Durante el largo viaje de vuelta desde los servidores de Google hasta nuestra computadora, el paquete atravesó varios routers a través de Internet, y cada uno le descontó 1 a su TTL. Al llegar a nuestra computadora con un valor de 118, esto indica que el paquete de respuesta dio varios saltos en la red hasta alcanzarnos.
 
 
 #### e) Dibujen la encapsulación del paquete que eligieron como "cajas dentro de cajas", indicando para cada caja qué tamaño en bytes tiene según Wireshark.
 
-La encapsulación del paquete capturado (con un tamaño total de **98 bytes** en el cable) se compone de la siguiente manera:
+![Encapsulación de Paquete - Cajas dentro de Cajas](Imagenes/Imagen_e.jpg)
+
+La encapsulación del paquete capturado se compone de la siguiente manera, tal cual ilustra el esquema:
 
 - **Caja externa (Capa de Enlace):** Trama Ethernet II -> Tamaño: **14 bytes** de cabecera.
 - **Caja intermedia (Capa de Red):** Paquete IPv4 -> Tamaño: **20 bytes** de cabecera.
-- **Caja interna (Capa de Red / Soporte):** Mensaje ICMP -> Tamaño: **64 bytes** en total (8 bytes de cabecera + 56 bytes de payload/datos).
+- **Caja interna (Capa de Red / Soporte):** Mensaje ICMP (Carga útil/Datos) -> Tamaño: **64 bytes** en total.
 
-*(Sumando los tamaños obtenemos: 14 + 20 + 64 = 98 bytes en total que reporta Wireshark).*
-
+*(Sumando los tamaños obtenemos: 14 + 20 + 64 = 98 bytes en total que reporta Wireshark para toda la trama).*
