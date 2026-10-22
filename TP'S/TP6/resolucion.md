@@ -95,10 +95,14 @@
 
 #### 1) Configuración MANUAL de la interfaz de red
 
-- **a) Dirección IPv4:**
-- **b) Máscara de subred:**
-- **c) Default gateway:**
-- **d) Justificación de las direcciones elegidas:**
+- **a) Dirección IPv4:** 192.168.9.245
+- **b) Máscara de subred:** 255.255.255.0 (/24)
+- **c) Default gateway:** 192.168.9.0
+- **d) Justificación de las direcciones elegidas:** 
+Las direcciones pertenecen al rango privado de Clase C (192.168.0.0/16), adecuadas para una red de laboratorio local e aislada.
+La máscara /24 sitúa a ambas computadoras dentro de la misma subred IP (192.168.9.0/24), lo que permite la comunicación directa a nivel de capa de enlace (Switch) sin necesidad de un router intermedio. La puerta de enlace (192.168.9.0) no era estrictamente necesaria para el tráfico local en el mismo switch, pero valida la sintaxis de configuración del adaptador.
+
+![](imagenes/2.1.jpeg)
 
 ---
 
@@ -106,7 +110,8 @@
 
 - Conexión al switch Cisco mediante los cables armados en la Parte 1.
 - Prueba de conectividad con `ping` hacia la PC del otro grupo:
-  *(Capturas de pantalla / terminal...)*
+
+![](imagenes/2.2.jpeg)
 
 ---
 
@@ -116,18 +121,20 @@
   ```bash
   ncat -u -l 5000
   ```
+![](imagenes/2.3.1.jpeg)
+
 - Emisor:
   ```bash
   ncat -u <IP_DESTINO> 5000
   ```
-
-*(Documentación y capturas del intercambio de mensajes...)*
+  ![](imagenes/2.3.2.jpeg)
 
 ---
 
 #### 4) Captura de paquetes UDP con Wireshark
 
-*(Capturas e inspección de tramas UDP...)*
+![](imagenes/2.4.1.jpeg)
+![](imagenes/2.4.2.jpeg)
 
 ---
 
@@ -135,23 +142,28 @@
 
 ##### a) ¿Se observa algún procedimiento de establecimiento de conexión antes de enviar los datos?
 
-*(Respuesta...)*
+No. En las capturas de Wireshark (udp.port == 5000) se observa que las tramas UDP se transmiten de forma directa e inmediata tan pronto como se envía el mensaje desde la consola. No existe ningún intercambio previo de señalización o saludo (como el 3-way handshake SYN, SYN-ACK, ACK de TCP). UDP es un protocolo no orientado a la conexión (connectionless).
 
 ##### b) ¿Existe algún mecanismo de confirmación de recepción equivalente a los ACK de TCP?
 
-*(Respuesta...)*
+No. En la captura no se genera ningún paquete de confirmación o acuse de recibo (ACK) por parte del protocolo UDP. UDP funciona bajo el esquema de "mejor esfuerzo" (Best Effort): envía los datagramas a la red sin verificar si llegaron con éxito al destinatario.
 
 ##### c) ¿Qué ocurre si se envían mensajes mientras el receptor UDP no está ejecutándose?
 
-*(Respuesta...)*
+En la captura de Wireshark se observa claramente que cuando la máquina cliente (192.168.9.244) envía un paquete UDP hacia el puerto 5000 sin que el servidor (192.168.9.245) tenga la aplicación receptor (nc) activa, el sistema operativo destino rechaza el paquete y responde inmediatamente con un mensaje del protocolo ICMP: *103 Destination unreachable (Port unreachable).*
+El emisor simplemente transmite el paquete y la red le devuelve esta notificación de puerto inalcanzable a nivel de capa de red (ICMP).
 
 ##### d) ¿UDP garantiza que los mensajes lleguen en el mismo orden en que fueron enviados?
 
-*(Respuesta...)*
+No. La cabecera de un datagrama UDP no posee campos para números de secuencia. Cada paquete se trata de manera independiente y autónoma dentro de la red. Si los datagramas sufren retardos o toman rutas diferentes, pueden llegar desordenados al destinatario. Si la aplicación requiere que lleguen en orden, debe implementarlo por su cuenta en la capa de aplicación.
 
 ##### e) ¿Qué aplicaciones reales utilizan UDP y por qué?
 
-*(Respuesta...)*
+Streaming en tiempo real y VoIP (Zoom, Discord, llamadas por WhatsApp): Es preferible perder un paquete o un fotograma antes que introducir retardos por retransmisiones de paquetes viejos, ya que el factor crítico es la baja latencia.
+
+Juegos en línea multijugador: Se transmiten actualizaciones continuas de posiciones y estados de los jugadores donde solo importa el dato más reciente.
+
+DNS (Domain Name System): Realiza consultas cortas de pregunta/respuesta sobre el puerto UDP 53 donde el sobrecosto de establecer una conexión TCP resultaría ineficiente.
 
 ---
 
